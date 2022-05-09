@@ -1,1 +1,1 @@
-# MSW_semin-rn-_pr-ce
+# MSW_seminarni_prace
