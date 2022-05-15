@@ -1,7 +1,7 @@
 #5. hledání kořenů
-import time
 import math
-
+import time
+from scipy import optimize
 
 t=time.time()
 #uzavřená metoda, půlení intervalů
@@ -60,34 +60,19 @@ print(f"Čas pomocí metody Bisekce: {time.time() - t} s\n")
 
 #Bernoulliho metoda, pro exp. fce pouze
 t=time.time()
-def Bernoulli(n,seznam,m,a0):    #vycházím z algoritmu na webowých stránkách: http://physics.ujep.cz/~jskvor/NME/DalsiSkripta/numerickemetody.pdf, str.90  #jen pro polynomiální fce
-  y=[]
-  yk=0
-  alpha=[]
 
-  for i in range(n):
-    if i!=n-1:
-      y.append(0)
-    else:
-      y.append(1)
-  
-  for k in range(n+1,m):    
-    yk=0
+a=0
+b=1
 
-    for j in range(len(seznam)):           
-      yk+=seznam[j]*y[len(y)-1-j] 
+koren1 = optimize.newton(f1, x0=(a+b/2))
+koren2 = optimize.newton(f2, x0=(a+b/2))
+koren3 = optimize.newton(f3, x0=(a+b/2))
+print(f"kořen funkce f1= {koren1} -> Předpoklad x=1")
+print(f"kořen funkce f1= {koren2} -> Předpoklad x=0,661")
+print(f"kořen funkce f1= {koren3} -> Předpoklad x=0.05+k*0.05, dle a,b")
 
-    y.append(yk)
-    alpha.append(y[-1]/y[-2])
 
-  return yk,alpha
+print(f"Čas pomocí Newtonovi metody: {time.time() - t} s\n")
 
-fce="x**3-x**2-x/4+1/4"   #vše z této fce přepíšu do proměnných
-n=3
-seznam=[1,1/4,-1/4]
-iterace=20
-yk,alpha=Bernoulli(n,seznam,iterace,1)
 
-print(f"koren = {alpha[-1]}")
 
-print(f"Čas pomocí Bernoulliho metody: {time.time() - t} s\n")

@@ -5,7 +5,7 @@ import math
 import scipy.integrate as integrate
 
 #3 funkce
-def f1(a,b,vel_casti,n_casti):       #f1 = x**3- 3*x + 2
+def f1(a,vel_casti,n_casti):       #f1 = x**3- 3*x + 2
   integ=0  
 
   for i in range(0,vel_casti):  
@@ -13,7 +13,7 @@ def f1(a,b,vel_casti,n_casti):       #f1 = x**3- 3*x + 2
     a=a+n_casti
   return integ
 
-def f2(a,b,vel_casti,n_casti):    #f2=e**x
+def f2(a,vel_casti,n_casti):    #f2=e**x
   integ=0
 
   for i in range(0,vel_casti):  
@@ -21,7 +21,7 @@ def f2(a,b,vel_casti,n_casti):    #f2=e**x
     a=a+n_casti
   return integ
 
-def f3(a,b,vel_casti,n_casti):     #f3 = (math.log(x-20)+10))
+def f3(a,vel_casti,n_casti):     #f3 = (math.log(x-20)+10))
   integ=0
 
   for i in range(0,vel_casti):  
@@ -38,9 +38,9 @@ obdelnik=10**6  #rozdělíme na obdelniky
 
 n_casti=(abs(a1-b))/obdelnik #rozdělíme na n stejných částí
 
-integral1=f1(a1,b,obdelnik,n_casti)
-integral2=f2(a1,b,obdelnik,n_casti)
-integral3=f3(a1,b,obdelnik,n_casti)
+integral1=f1(a1,obdelnik,n_casti)
+integral2=f2(a1,obdelnik,n_casti)
+integral3=f3(a1,obdelnik,n_casti)
 
 
 print(f"Integrál od {a1} do {b} funkce f1 = {integral1}")    
