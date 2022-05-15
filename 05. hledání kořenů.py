@@ -3,8 +3,6 @@ import math
 import time
 from scipy import optimize
 
-t=time.time()
-#uzavřená metoda, půlení intervalů
 #funkce
 def f1(x):
   return x**3-x**2-x/4+1/4
@@ -43,8 +41,10 @@ def f3_res(a,b,c,kroky):
       a=c
   return c
 
-#"main"
-a=0
+t=time.time()
+#uzavřená metoda, půlení intervalů
+
+a=0     #od kam po kam zjišťuji kořeny
 b=1
 c=0
 poc_kroku=50  
@@ -58,10 +58,10 @@ print(f"kořen funkce f2= {koren_f2} -> Předpoklad x=0,661")
 print(f"kořen funkce f3= {koren_f3} -> Předpoklad x=0.05+k*0.05, dle a,b")
 print(f"Čas pomocí metody Bisekce: {time.time() - t} s\n")
 
-#Bernoulliho metoda, pro exp. fce pouze
+#Newtonova metoda
 t=time.time()
 
-a=0
+a=0     #od kam po kam zjišťuji kořeny
 b=1
 
 koren1 = optimize.newton(f1, x0=(a+b/2))

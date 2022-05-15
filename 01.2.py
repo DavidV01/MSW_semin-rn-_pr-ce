@@ -5,7 +5,8 @@ import scipy.integrate as integrate
 
 t = time.time()
 fce="sin(x)"
-#rozpětí od a do b a velikost obdélníku
+#rozpětí od a do b, a velikost obdélníku
+
 a1=0
 b=math.pi
 obdelnik=10**6  #rozdělíme na obdelniky
@@ -13,6 +14,7 @@ obdelnik=10**6  #rozdělíme na obdelniky
 n_casti=(abs(a1-b))/obdelnik #rozdělíme na n stejných částí
 integral=0
 a2=a1
+
 for i in range(0,obdelnik):  
   integral+=math.sin(a2)*n_casti    #funkční hodnota fce*velikost jedné části
   a2=a2+n_casti 

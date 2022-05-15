@@ -4,7 +4,7 @@ import time
 import math
 import scipy.integrate as integrate
 
-#3 funkce
+#funkce
 def f1(a,vel_casti,n_casti):       #f1 = x**3- 3*x + 2
   integ=0  
 
@@ -31,6 +31,7 @@ def f3(a,vel_casti,n_casti):     #f3 = (math.log(x-20)+10))
 
 #pomocí pythonu a Math
 t = time.time()
+
 #rozpětí od a do b a velikost obdélníku
 a1=1
 b=10

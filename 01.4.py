@@ -1,8 +1,9 @@
-#kvadratická rovnice ------------------------VYMYSLET 5. PŘÍKLAD
+#kvadratická rovnice
 import time
 import math
 from sympy.solvers import solve
 from sympy import Symbol
+
 t = time.time()
 
 a=1
@@ -27,6 +28,8 @@ print(f"čas v Pythonu: {time.time() - t} s")
 
 #sympy
 t = time.time()
+
 x = Symbol('x')
 print(solve(x**2-2*x+1,x))
+
 print(f"Čas s modulem Sympy: {time.time() - t} s")

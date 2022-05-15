@@ -2,13 +2,13 @@
 import time
 import matplotlib.pyplot as plt
 import numpy as np
-#přímá metoda řešení
 
+#přímá metoda řešení
 x1=[]
 y1=[]
 x2=[]
 y2=[]
-for i in range(2,100):        #dokud něco tohle pojede a bude zvětšovat matici/znovu generovat s dimenzí +1    
+for i in range(2,100):        #tvorba náhodných matice do velikost 100x100   
 
   A = np.random.randint(1,500,size=(i,i))
   
@@ -21,7 +21,7 @@ for i in range(2,100):        #dokud něco tohle pojede a bude zvětšovat matic
   y1.append(time.time()-t)
   
   t=time.time()
-
+  #Jacobiho interpolace
   def jacobi(A, b, niteraci, x0=np.ones(len(A))):
       x = x0      
       D = np.diag(A)
@@ -40,4 +40,6 @@ for i in range(2,100):        #dokud něco tohle pojede a bude zvětšovat matic
 plt.plot(x1, y1,label="přímá iterpolace")
 plt.plot(x2, y2,label="Jacobiho interpolace")
 plt.legend(loc='upper right')
+plt.xlabel('Velikost matice')
+plt.ylabel('Čas v ms')
 plt.show()
