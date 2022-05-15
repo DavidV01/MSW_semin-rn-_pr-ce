@@ -15,7 +15,7 @@ def f3(x):
 
 #výpočet kořenů funkcí
 def f1_res(a,b,c,kroky):
-  for i in range(poc_kroku):  
+  for i in range(kroky):  
     c=(a+b)/2  
     if (f1(a)*f1(c))<0:  #kořen někde mezi nima
       b=c
@@ -24,7 +24,7 @@ def f1_res(a,b,c,kroky):
   return c
 
 def f2_res(a,b,c,kroky):
-  for i in range(poc_kroku):  
+  for i in range(kroky):  
     c=(a+b)/2  
     if (f2(a)*f2(c))<0:  #kořen někde mezi nima
       b=c
@@ -33,7 +33,7 @@ def f2_res(a,b,c,kroky):
   return c
 
 def f3_res(a,b,c,kroky):
-  for i in range(poc_kroku):  
+  for i in range(kroky):  
     c=(a+b)/2  
     if (f3(a)*f3(c))<0:  #kořen někde mezi nima
       b=c
